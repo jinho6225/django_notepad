@@ -3,13 +3,16 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
 
-from notes.views import note_list_view, finish_item
+from notes.views import note_list_view, finish_item, recover_item, delete_item
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', note_list_view, name='note-list'),
-    path('finish-item/<id>', finish_item, name='finish-note-item')
+    path('finish-item/<id>', finish_item, name='finish-note-item'),
+    path('recove-item/<id>', recover_item, name='recover-note-item'),
+    path('delete_item-item/<id>', delete_item, name='delete-note-item'),
+
 
 ]
 
